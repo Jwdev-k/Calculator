@@ -1,0 +1,152 @@
+JFDML JFormDesigner: "7.0.5.4.420" Java: "11.0.14.1" encoding: "UTF-8"
+
+new FormModel {
+	"i18n.bundleName": "settings"
+	"i18n.keyPrefix": "calcFrame"
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+			"$horizontalGroup": "par l {seq l {space :::p, par l {seq l {comp button1:1::p:80:p, space :::p, comp button2:1::p:80:p, space :::x, comp button3:1::p:80:p, space :::p, comp button4:1::p:80:p}, seq l {comp button5:1::p:80:p, space :::p, comp button6:1::p:80:p, space :::p, comp button7:1::p:80:p, space :::x, comp button8:1::p:80:p}, seq l {par l:::p {seq {comp button13:1::p:80:p, space :::p, comp button14:1::p:80:p, space :::p, comp button15:1::p:80:p}, comp button17:::::x}, space :::x, comp button16:1::p:80:p}, seq l {par l {comp calc:::p:335:p, seq l {comp button9:1::p:80:p, space :::p, comp button10:1::p:80:p, space :::p, comp button11:1::p:80:p, space :::p, comp button12:1::p:80:p}}, space :0:0:x}}, space :::p}}"
+			"$verticalGroup": "par l {seq l {space :p:19:p, comp calc:::p:70:p, space :::p, par b {comp button1::b:p:60:p, comp button4::b:p:60:p, comp button2::b:p:60:p, comp button3::b:p:60:p}, space :::p, par b {comp button5::b:p:60:p, comp button6::b:p:60:p, comp button7::b:p:60:p, comp button8::b:p:60:p}, space :::p, par b {comp button9::b:p:60:p, comp button10::b:p:60:p, comp button11::b:p:60:p, comp button12::b:p:60:p}, space :::p, par l {seq {par b {comp button13::b:p:60:p, comp button14::b:p:60:p, comp button15::b:p:60:p}, space :::p, comp button17:::p:60:p}, comp button16:::p:126:p}, space :::p}}"
+		} ) {
+			name: "this"
+			"title": "Calculator"
+			"resizable": false
+			"defaultCloseOperation": 3
+			"background": new java.awt.Color( 60, 63, 64, 255 )
+			addEvent( new FormEvent( "java.awt.event.KeyListener", "keyPressed", "buttonKeyPressed", true ) )
+			add( new FormComponent( "javax.swing.JTextArea" ) {
+				name: "calc"
+				"editable": false
+				"font": new com.jformdesigner.model.SwingDerivedFont( "맑은 고딕", 65536, 30, true )
+				"lineWrap": true
+				auxiliary() {
+					"JavaCodeGenerator.variableModifiers": 1
+				}
+				addEvent( new FormEvent( "java.awt.event.KeyListener", "keyPressed", "buttonKeyPressed", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "button1"
+				"text": "←"
+				"font": &Font0 new java.awt.Font( "맑은 고딕", 0, 20 )
+				addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "button1MouseClicked", true ) )
+				addEvent( new FormEvent( "java.awt.event.KeyListener", "keyPressed", "buttonKeyPressed", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "button2"
+				"text": "AC"
+				"font": #Font0
+				addEvent( new FormEvent( "java.awt.event.KeyListener", "keyPressed", "buttonKeyPressed", true ) )
+				addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "button2MouseClicked", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "button3"
+				"text": "/"
+				"font": #Font0
+				addEvent( new FormEvent( "java.awt.event.KeyListener", "keyPressed", "buttonKeyPressed", true ) )
+				addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "button3MouseClicked", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "button4"
+				"text": "X"
+				"font": #Font0
+				addEvent( new FormEvent( "java.awt.event.KeyListener", "keyPressed", "buttonKeyPressed", true ) )
+				addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "button4MouseClicked", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "button5"
+				"text": "7"
+				"font": #Font0
+				addEvent( new FormEvent( "java.awt.event.KeyListener", "keyPressed", "buttonKeyPressed", true ) )
+				addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "button5MouseClicked", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "button6"
+				"text": "8"
+				"font": #Font0
+				addEvent( new FormEvent( "java.awt.event.KeyListener", "keyPressed", "buttonKeyPressed", true ) )
+				addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "button6MouseClicked", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "button7"
+				"text": "9"
+				"font": #Font0
+				addEvent( new FormEvent( "java.awt.event.KeyListener", "keyPressed", "buttonKeyPressed", true ) )
+				addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "button7MouseClicked", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "button8"
+				"text": "-"
+				"font": #Font0
+				addEvent( new FormEvent( "java.awt.event.KeyListener", "keyPressed", "buttonKeyPressed", true ) )
+				addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "button8MouseClicked", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "button9"
+				"text": "4"
+				"font": #Font0
+				addEvent( new FormEvent( "java.awt.event.KeyListener", "keyPressed", "buttonKeyPressed", true ) )
+				addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "button9MouseClicked", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "button10"
+				"text": "5"
+				"font": #Font0
+				addEvent( new FormEvent( "java.awt.event.KeyListener", "keyPressed", "buttonKeyPressed", true ) )
+				addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "button10MouseClicked", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "button11"
+				"text": "6"
+				"font": #Font0
+				addEvent( new FormEvent( "java.awt.event.KeyListener", "keyPressed", "buttonKeyPressed", true ) )
+				addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "button11MouseClicked", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "button12"
+				"text": "+"
+				"font": #Font0
+				addEvent( new FormEvent( "java.awt.event.KeyListener", "keyPressed", "buttonKeyPressed", true ) )
+				addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "button12MouseClicked", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "button13"
+				"text": "1"
+				"font": #Font0
+				addEvent( new FormEvent( "java.awt.event.KeyListener", "keyPressed", "buttonKeyPressed", true ) )
+				addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "button13MouseClicked", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "button14"
+				"text": "2"
+				"font": #Font0
+				addEvent( new FormEvent( "java.awt.event.KeyListener", "keyPressed", "buttonKeyPressed", true ) )
+				addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "button14MouseClicked", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "button15"
+				"text": "3"
+				"font": #Font0
+				addEvent( new FormEvent( "java.awt.event.KeyListener", "keyPressed", "buttonKeyPressed", true ) )
+				addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "button15MouseClicked", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "button16"
+				"text": "="
+				"font": #Font0
+				addEvent( new FormEvent( "java.awt.event.KeyListener", "keyPressed", "buttonKeyPressed", true ) )
+				addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "button16MouseClicked", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "button17"
+				"text": "0"
+				"font": #Font0
+				addEvent( new FormEvent( "java.awt.event.KeyListener", "keyPressed", "buttonKeyPressed", true ) )
+				addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "button17MouseClicked", true ) )
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 5, 0 )
+			"size": new java.awt.Dimension( 350, 465 )
+		} )
+	}
+}
