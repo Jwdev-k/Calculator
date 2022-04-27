@@ -56,6 +56,8 @@ public class CalcFrame extends JFrame {
         button16.setForeground(new Color(187,187,187));
         button17.setBackground(new Color(60,63,65));
         button17.setForeground(new Color(187,187,187));
+        button18.setBackground(new Color(60,63,65));
+        button18.setForeground(new Color(187,187,187));
         setVisible(true);
     }
 
@@ -106,22 +108,39 @@ public class CalcFrame extends JFrame {
         calcHistory.add(t);
         try {
             String calcdata = null;
+            CalcData cd;
             int idx = 0;
             if (t.contains("+")) {
                 idx = t.indexOf("+");
-                CalcData cd = new CalcData(Integer.parseInt(t.substring(0, idx)), Integer.parseInt(t.substring(idx+1)), EOperator.plus);
+                if (t.contains(".")) {
+                    cd = new CalcData(t.substring(0, idx), t.substring(idx + 1), EOperator.plus, true);
+                } else {
+                    cd = new CalcData(t.substring(0, idx), t.substring(idx + 1), EOperator.plus, false);
+                }
                 calcdata = String.valueOf(cd.calc());
             } else if (t.contains("-")) {
                 idx = t.indexOf("-");
-                CalcData cd = new CalcData(Integer.parseInt(t.substring(0, idx)), Integer.parseInt(t.substring(idx+1)), EOperator.minus);
+                if (t.contains(".")) {
+                    cd = new CalcData(t.substring(0, idx), t.substring(idx + 1), EOperator.minus, true);
+                } else {
+                    cd = new CalcData(t.substring(0, idx), t.substring(idx + 1), EOperator.minus, false);
+                }
                 calcdata = String.valueOf(cd.calc());
             } else if (t.contains("×")) {
                 idx = t.indexOf("×");
-                CalcData cd = new CalcData(Integer.parseInt(t.substring(0, idx)), Integer.parseInt(t.substring(idx+1)), EOperator.multiply);
+                if (t.contains(".")) {
+                    cd = new CalcData(t.substring(0, idx), t.substring(idx + 1), EOperator.minus, true);
+                } else {
+                    cd = new CalcData(t.substring(0, idx), t.substring(idx + 1), EOperator.multiply, false);
+                }
                 calcdata = String.valueOf(cd.calc());
             } else if (t.contains("÷")) {
                 idx = t.indexOf("÷");
-                CalcData cd = new CalcData(Integer.parseInt(t.substring(0, idx)), Integer.parseInt(t.substring(idx+1)), EOperator.division);
+                if (t.contains(".")) {
+                    cd = new CalcData(t.substring(0, idx), t.substring(idx + 1), EOperator.division, true);
+                } else {
+                    cd = new CalcData(t.substring(0, idx), t.substring(idx + 1), EOperator.division, false);
+                }
                 calcdata = String.valueOf(cd.calc());
             }
             sb.setLength(0);
@@ -151,6 +170,7 @@ public class CalcFrame extends JFrame {
             case 106 -> setText("×");
             case 107 -> setText("+");
             case 109 -> setText("-");
+            case 110 -> setText(".");
             case 111 -> setText("÷");
             case 10 -> result(sb.toString());
             case 8 -> delete();
@@ -226,6 +246,10 @@ public class CalcFrame extends JFrame {
         setText("0");
     }
 
+    private void button18MouseClicked(MouseEvent e) {
+        setText(".");
+    }
+
 
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
@@ -247,6 +271,7 @@ public class CalcFrame extends JFrame {
         button15 = new JButton();
         button16 = new JButton();
         button17 = new JButton();
+        button18 = new JButton();
 
         //======== this ========
         setTitle("Calculator");
@@ -544,6 +569,22 @@ public class CalcFrame extends JFrame {
             }
         });
 
+        //---- button18 ----
+        button18.setText(".");
+        button18.setFont(new Font("\ub9d1\uc740 \uace0\ub515", Font.PLAIN, 20));
+        button18.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyPressed(KeyEvent e) {
+                buttonKeyPressed(e);
+            }
+        });
+        button18.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                button18MouseClicked(e);
+            }
+        });
+
         GroupLayout contentPaneLayout = new GroupLayout(contentPane);
         contentPane.setLayout(contentPaneLayout);
         contentPaneLayout.setHorizontalGroup(
@@ -572,10 +613,12 @@ public class CalcFrame extends JFrame {
                                 .addGroup(contentPaneLayout.createSequentialGroup()
                                     .addComponent(button13, GroupLayout.PREFERRED_SIZE, 80, GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(button14, GroupLayout.PREFERRED_SIZE, 80, GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(button15, GroupLayout.PREFERRED_SIZE, 80, GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(button14, GroupLayout.PREFERRED_SIZE, 80, GroupLayout.PREFERRED_SIZE))
                                 .addComponent(button17, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                            .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.TRAILING)
+                                .addComponent(button15, GroupLayout.PREFERRED_SIZE, 80, GroupLayout.PREFERRED_SIZE)
+                                .addComponent(button18, GroupLayout.PREFERRED_SIZE, 80, GroupLayout.PREFERRED_SIZE))
                             .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(button16, GroupLayout.PREFERRED_SIZE, 80, GroupLayout.PREFERRED_SIZE))
                         .addGroup(contentPaneLayout.createSequentialGroup()
@@ -624,7 +667,9 @@ public class CalcFrame extends JFrame {
                                 .addComponent(button14, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)
                                 .addComponent(button15, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE))
                             .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(button17, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE))
+                            .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                .addComponent(button17, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)
+                                .addComponent(button18, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)))
                         .addComponent(button16, GroupLayout.PREFERRED_SIZE, 126, GroupLayout.PREFERRED_SIZE))
                     .addContainerGap())
         );
@@ -652,5 +697,6 @@ public class CalcFrame extends JFrame {
     private JButton button15;
     private JButton button16;
     private JButton button17;
+    private JButton button18;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 }

@@ -6,8 +6,8 @@ new FormModel {
 	contentType: "form/swing"
 	root: new FormRoot {
 		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-			"$horizontalGroup": "par l {seq l {space :::p, par l {seq l {comp button1:1::p:80:p, space :::p, comp button2:1::p:80:p, space :::x, comp button3:1::p:80:p, space :::p, comp button4:1::p:80:p}, seq l {comp button5:1::p:80:p, space :::p, comp button6:1::p:80:p, space :::p, comp button7:1::p:80:p, space :::x, comp button8:1::p:80:p}, seq l {par l:::p {seq {comp button13:1::p:80:p, space :::p, comp button14:1::p:80:p, space :::p, comp button15:1::p:80:p}, comp button17:::::x}, space :::x, comp button16:1::p:80:p}, seq l {par l {comp calc:::p:335:p, seq l {comp button9:1::p:80:p, space :::p, comp button10:1::p:80:p, space :::p, comp button11:1::p:80:p, space :::p, comp button12:1::p:80:p}}, space :0:0:x}}, space :::p}}"
-			"$verticalGroup": "par l {seq l {space :p:19:p, comp calc:::p:70:p, space :::p, par b {comp button1::b:p:60:p, comp button4::b:p:60:p, comp button2::b:p:60:p, comp button3::b:p:60:p}, space :::p, par b {comp button5::b:p:60:p, comp button6::b:p:60:p, comp button7::b:p:60:p, comp button8::b:p:60:p}, space :::p, par b {comp button9::b:p:60:p, comp button10::b:p:60:p, comp button11::b:p:60:p, comp button12::b:p:60:p}, space :::p, par l {seq {par b {comp button13::b:p:60:p, comp button14::b:p:60:p, comp button15::b:p:60:p}, space :::p, comp button17:::p:60:p}, comp button16:::p:126:p}, space :::p}}"
+			"$horizontalGroup": "par l {seq l {space :::p, par l {seq l {comp button1:1::p:80:p, space :::p, comp button2:1::p:80:p, space :::x, comp button3:1::p:80:p, space :::p, comp button4:1::p:80:p}, seq l {comp button5:1::p:80:p, space :::p, comp button6:1::p:80:p, space :::p, comp button7:1::p:80:p, space :::x, comp button8:1::p:80:p}, seq l {par l:::p {seq {comp button13:1::p:80:p, space :::p, comp button14:1::p:80:p}, comp button17:::::x}, space :::p, par t {comp button15:1::p:80:p, comp button18:::p:80:p}, space :::x, comp button16:1::p:80:p}, seq l {par l {comp calc:::p:335:p, seq l {comp button9:1::p:80:p, space :::p, comp button10:1::p:80:p, space :::p, comp button11:1::p:80:p, space :::p, comp button12:1::p:80:p}}, space :0:0:x}}, space :::p}}"
+			"$verticalGroup": "par l {seq l {space :p:19:p, comp calc:::p:70:p, space :::p, par b {comp button1::b:p:60:p, comp button4::b:p:60:p, comp button2::b:p:60:p, comp button3::b:p:60:p}, space :::p, par b {comp button5::b:p:60:p, comp button6::b:p:60:p, comp button7::b:p:60:p, comp button8::b:p:60:p}, space :::p, par b {comp button9::b:p:60:p, comp button10::b:p:60:p, comp button11::b:p:60:p, comp button12::b:p:60:p}, space :::p, par l {seq {par b {comp button13::b:p:60:p, comp button14::b:p:60:p, comp button15::b:p:60:p}, space :::p, par b {comp button17::b:p:60:p, comp button18::b:p:60:p}}, comp button16:::p:126:p}, space :::p}}"
 		} ) {
 			name: "this"
 			"title": "Calculator"
@@ -143,6 +143,13 @@ new FormModel {
 				"font": #Font0
 				addEvent( new FormEvent( "java.awt.event.KeyListener", "keyPressed", "buttonKeyPressed", true ) )
 				addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "button17MouseClicked", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "button18"
+				"text": "."
+				"font": #Font0
+				addEvent( new FormEvent( "java.awt.event.KeyListener", "keyPressed", "buttonKeyPressed", true ) )
+				addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "button18MouseClicked", true ) )
 			} )
 		}, new FormLayoutConstraints( null ) {
 			"location": new java.awt.Point( 5, 0 )

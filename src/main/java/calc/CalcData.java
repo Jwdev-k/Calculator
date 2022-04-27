@@ -11,16 +11,26 @@ import lombok.ToString;
 @AllArgsConstructor
 @ToString
 public class CalcData {
-    private int num1;
-    private int num2;
+    private String num1;
+    private String num2;
     private EOperator operator;
+    private boolean primeNumber;
 
-    public int calc() {
-        return switch (operator) {
-            case multiply -> getNum1() * getNum2();
-            case plus -> getNum1() + getNum2();
-            case minus -> getNum1() - getNum2();
-            case division -> getNum1() / getNum2();
-        };
+    public String calc() {
+        if (!isPrimeNumber()) {
+            return switch (operator) {
+                case multiply -> String.valueOf(Integer.parseInt(getNum1()) * Integer.parseInt(getNum2()));
+                case plus -> String.valueOf(Integer.parseInt(getNum1()) + Integer.parseInt(getNum2()));
+                case minus -> String.valueOf(Integer.parseInt(getNum1()) - Integer.parseInt(getNum2()));
+                case division -> String.valueOf(Integer.parseInt(getNum1()) / Integer.parseInt(getNum2()));
+            };
+        } else {
+            return switch (operator){
+                case multiply -> String.valueOf(Double.parseDouble(getNum1()) * Double.parseDouble(getNum2()));
+                case plus -> String.valueOf(Double.parseDouble(getNum1()) + Double.parseDouble(getNum2()));
+                case minus -> String.valueOf(Double.parseDouble(getNum1()) - Double.parseDouble(getNum2()));
+                case division -> String.valueOf(Double.parseDouble(getNum1()) / Double.parseDouble(getNum2()));
+            };
+        }
     }
 }
