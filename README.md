@@ -1,5 +1,5 @@
 # Calculator
-JFromDesigner를 이용해 만든 계산기 프로젝트
+JFormDesigner를 이용해 만든 계산기 프로젝트
 ### 1. 개발환경
 - JDK17
 ### 2. GUI 화면
